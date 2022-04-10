@@ -1,0 +1,36 @@
+{% extends "template.html" %} {% block link %} {% endblock %} {% block navbar %}
+<div class="container-navbar-cosmetic">
+	<a href="#"><i class="fa-solid fa-gear"></i></a>
+	<a href="#" class="active">Epidemic <i class="fa-solid fa-biohazard"></i></a>
+	<a href="#">Vaccination <i class="fa-solid fa-syringe"></i></a>
+</div>
+{% endblock %} {% block content %}
+<div class="container-left">
+	{% for case in cases %}
+	<div class="panel-box">
+		<div class="panel-box-top">
+			<span>{{ case['state'] }}</span>
+		</div>
+		<div class="panel-box-middle">
+			<div class="component-left">
+				<span><i class="fa-solid fa-virus-covid"></i> <b>ACTIVE</b></span>
+				<span>{{ case['cases_active'] }}</span>
+			</div>
+			<div class="component-right">
+				<span><i class="fa-solid fa-viruses"></i> <b>NEW</b></span>
+				<span>{{ case['cases_new'] }}</span>
+			</div>
+		</div>
+		<div class="panel-box-bottom">
+			{% for death in deaths %} {% if death['state'] == case['state'] and death['date'] == case['date'] %}
+			<span class="death"><i class="fa-solid fa-skull"></i> <span>{{ death['deaths_new'] }}</span></span>
+			{% endif %} {%endfor%}
+			<span class="date"><i class="fa-solid fa-calendar-day"></i> <span>{{ case['date'] }}</span></span>
+		</div>
+	</div>
+	{%endfor%}
+</div>
+
+<div class="container-right"></div>
+
+{% endblock %}

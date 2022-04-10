@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/index.css') }}" />
+		<link rel="icon" type="image/x-icon" href="{{ url_for('static',filename='images/index.ico') }}" />
+		<script src="https://kit.fontawesome.com/08dad25c95.js" crossorigin="anonymous"></script>
+		{% block link %} {% endblock %}
+		<title>{{ title }}</title>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="container-top">
+				<div class="container-navbar">
+					<div class="panel-title">
+						<h1 class="header-title">DASHBOARD COVID19 MALAYSIA</h1>
+					</div>
+					<div class="panel-logo">
+						<img class="icon-logo" src="{{ url_for('static',filename='images/index.ico') }}" alt="images" />
+					</div>
+				</div>
+				<!-- Navbar -->
+				{% block navbar %} {% endblock %}
+			</div>
+
+			{% block content %}
+			<!-- Content -->
+			{% endblock %}
+		</div>
+	</body>
+	<footer class="footer">&copy;{{ year }} Dashboard Covid19 Malaysia developed by Afiq Harith</footer>
+</html>
