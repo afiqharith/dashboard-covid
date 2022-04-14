@@ -2,7 +2,7 @@ from urllib.request import urlopen
 import datetime
 import json
 
-DEBUG = True
+DEBUG = False
 
 if DEBUG:
     URL = "http://127.0.0.1:5000/"
