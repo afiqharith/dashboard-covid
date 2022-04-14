@@ -6,7 +6,7 @@
 </div>
 {% endblock %} {% block content %}
 <div class="container-left">
-	{% for case in cases %}
+	{% for case in state_cases %}
 	<div class="panel-box">
 		<div class="panel-box-top">
 			<span>{{ case['state'] }}</span>
@@ -22,7 +22,7 @@
 			</div>
 		</div>
 		<div class="panel-box-bottom">
-			{% for death in deaths %} {% if death['state'] == case['state'] and death['date'] == case['date'] %}
+			{% for death in state_deaths %} {% if death['state'] == case['state'] and death['date'] == case['date'] %}
 			<span class="death"><i class="fa-solid fa-skull"></i> <span>{{ death['deaths_new'] }}</span></span>
 			{% endif %} {%endfor%}
 			<span class="date"><i class="fa-solid fa-calendar-day"></i> <span>{{ case['date'] }}</span></span>
@@ -31,6 +31,37 @@
 	{%endfor%}
 </div>
 
-<div class="container-right"></div>
+<div class="container-right">
+	<div class="segment-top">
+		<span class="title"><i class="fa-solid fa-chart-simple" style="color: red"></i> NATION Statistic</span>
+	</div>
+	<div class="segment-middle">
+		<div class="nation-name">
+			<span class="title">MALAYSIA</span>
+		</div>
+		<div class="component-1">
+			<div class="left">
+				<span id="field"><i class="fa-solid fa-virus-covid"></i> <b>ACTIVE</b></span>
+				<span id="data">{{ nation_cases["cases_active"] }}</span>
+			</div>
+			<div class="right">
+				<span id="field"><i class="fa-solid fa-viruses"></i> <b>NEW</b></span>
+				<span id="data">{{ nation_cases["cases_new"] }}</span>
+			</div>
+		</div>
+		<div class="component-2">
+			<span><i class="fa-solid fa-skull"></i> <span>{{ nation_deaths["deaths_new"] }}</span></span>
+		</div>
+		<div class="component-3">
+			<div class="left"></div>
+			<div class="right"></div>
+		</div>
+		<div class="component-4">
+			<div class="left"></div>
+			<div class="right"></div>
+		</div>
+	</div>
+	<div class="segment-bottom"></div>
+</div>
 
 {% endblock %}

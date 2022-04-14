@@ -1,10 +1,14 @@
 :root{
-	--font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	--font-default: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	--font-2nd: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	--color-bg: #293838;
+	--color-navbar: #212c2c;
+
+	--color-component: #353535;
+	--color-border: #5c5c5c;
 	--color-font: white;
-	--color-1: #212c2c;
-	--color-2: #304242;
-	--color-3: #3e4e4e;
-	--color-border: #242424;
+
+	--border-size: 0.1vmin;
 }
 
 * {
@@ -22,7 +26,7 @@ body {
 	float: left;
 	top: 0vh;
 	left: 0vw;
-	background-color: var(--color-1);
+	background-color: var(--color-bg);
 }
 
 .container{
@@ -48,7 +52,8 @@ body {
 	position: relative;
 	float: left;
 	width: 100%;
-	background-color: var(--color-1);
+	height: 100%;
+	background-color: var(--color-navbar);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -61,7 +66,7 @@ body {
 	float: left;
 	width: 100%;
 	height: 41%;
-	background-color: var(--color-1);
+	background-color: var(--color-navbar);
 	box-shadow: rgb(0,0,0) 0px 2px 7px;
 	z-index: 1;
 	/* display: flex; */
@@ -72,7 +77,7 @@ body {
 .container-navbar-cosmetic a{
 	position: relative;
 	float: left;
-	font-family: var(--font);
+	font-family: var(--font-default);
 	font-size: 1.7vmin;
 	margin-top: 0.5vmin;
 	margin-left: 1.5vmin;
@@ -97,7 +102,7 @@ a.active{
 .header-title {
 	color: white;
 	font-size: 3vmin;
-	font-family: var(--font);
+	font-family: var(--font-default);
 }
 
 .icon-logo {
@@ -119,6 +124,7 @@ a.active{
 	width: 20%;
 	margin: 1.7vh 2vw; 
 	padding: 0;
+	box-shadow: rgb(0,0,0) 0px 2px 7px;
 }
 
 .panel-box-top{
@@ -132,14 +138,15 @@ a.active{
 	border-style: solid solid solid solid;
 	border-radius: 0.4vmin 0.4vmin 0 0;
 	border-color: var(--color-border);
+	border-width: var(--border-size);
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: var(--color-2);
+	background: var(--color-component);
 }
 
 .panel-box-top span{
-	font-family: var(--font);
+	font-family: var(--font-default);
 	color: var(--color-font);
 	font-size: 1.8vmin;
 	text-align: center;
@@ -159,6 +166,7 @@ a.active{
 	height: 100%;
 	border-style: none none none solid;
 	border-color: var(--color-border);
+	border-width: var(--border-size);
 	background-color: #e78b00;
 }
 
@@ -169,11 +177,12 @@ a.active{
 	height: 100%;
 	border-style: none solid none solid ;
 	border-color: var(--color-border);
+	border-width: var(--border-size);
 	background-color: red;
 }
 
 .component-left span, .component-right span{
-	font-family: var(--font);
+	font-family: var(--font-default);
 	font-size: 2vmin;
 	height: 50%;
 	width: 100%;
@@ -191,19 +200,20 @@ a.active{
 	border-style: solid;
 	border-color: var(--color-border);
 	border-radius: 0 0 0.4vmin 0.4vmin;
-	background-color: var(--color-3);
+	border-width: var(--border-size);
+	background-color: var(--color-component);
 	color: var(--color-font);
 }
 
 .panel-box-bottom .death{
 	position: absolute;
 	float: right;
-	font-family: var(--font);
+	font-family: var(--font-default);
 	font-size: 1.3vmin;
 	/* font-style: italic; */
 	top: 0;
 	margin-left: 0.4vmin;
-	color: var(--font);
+	color: var(--font-default);
 }
 
 .death span{
@@ -215,10 +225,10 @@ a.active{
 	float: right;
 	right: 0;
 	bottom: 0.2vh;
-	font-family: var(--font);
+	font-family: var(--font-default);
 	font-size: 1vmin;
 	font-style: italic;
-	color: var(--font);
+	color: var(--font-default);
 }
 
 .container-right{
@@ -226,7 +236,144 @@ a.active{
 	float: left;
 	width: 20%;
 	height: 87%;
-	background: red;
+	/* background: yellow; */
+
+}
+
+.segment-top{
+	position: relative;
+	float: left;
+	width: 100%;
+	height: 10%;
+	background: var(--color-component);
+
+	border-style: solid solid none solid;
+	border-radius: 0.4vmin 0.4vmin 0 0;
+	border-color: var(--color-border);
+	border-width: var(--border-size);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.segment-top .title{
+	font-family: var(--font-2nd);
+	color: white;
+	/* border-style: none none none solid;
+	border-color: red; */
+	padding-left: 1vh;
+	font-size: 2.5vmin;
+}
+
+.segment-middle{
+	position: relative;
+	float: left;
+	width: 100%;
+	height: 80%;	
+	border-style: solid solid solid solid;
+	border-radius: 0 0 0.4vmin 0.4vmin;
+	border-color: var(--color-border);
+	border-width: var(--border-size);
+
+	background: var(--color-component);
+}
+.segment-middle{
+	position: relative;
+	float: left;
+	height: 70%;
+	width: 100%;
+	/* background-color: greenyellow; */
+}
+
+.nation-name{
+	position: relative;
+	float: left;
+	height: 10%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.nation-name .title{
+	font-family: var(--font-default);
+	font-size: 2.5vmin;
+	color: var(--color-font);
+}
+
+.component-1{
+position: relative;
+float: left;
+
+width: 100%;
+height: 15%;
+font-family: var(--font-default);
+color: white;
+}
+
+.component-1 .left{
+	position: relative;
+	float: left;
+	width: 50%;
+	height: 100%;
+	background-color: red;
+	border-style: solid solid solid none;
+	border-color: var(--color-border);
+	border-width: var(--border-size);
+}
+
+.component-1 .right{
+	position: relative;
+	float: right;
+	width: 50%;
+	height: 100%;	
+	border-style: solid solid solid none;
+	border-color: #212c2c;
+	border-width: var(--border-size);
+	border-color: var(--color-border);
+	background-color: orange;
+}
+
+.component-1 #field, .component-1 #data, .component-2 #field, .component-2 #data{
+	position: relative;
+	float: right;
+	width: 100%;
+	height: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.component-2{
+	position: relative;
+	float: left;
+	font-family: var(--font-default);
+color: white;
+	
+	width: 100%;
+	height: 15%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* background-color: blue; */
+}
+
+.component-3{
+	position: relative;
+	float: left;
+	
+	width: 100%;
+	height: 15%;
+	/* background-color: rebeccapurple; */
+}
+.component-4{
+	position: relative;
+	float: left;
+	
+	width: 100%;
+	height: 15%;
+	/* background-color: pink; */
 }
 
 
@@ -261,6 +408,6 @@ a.active{
 	left: 0vw;
 	bottom: 0vh;
 	font-size: 1.5vmin;
-	font-family: var(--font);
+	font-family: var(--font-default);
 	color: white;
 }
