@@ -5,9 +5,9 @@ import json
 DEBUG = False
 
 if DEBUG:
-    URL = "http://127.0.0.1:5000/"
+    URL = "http://localhost:5000/"
 else:
-    URL = "https://api-covid19-malaysia.herokuapp.com/"
+    URL = "https://api-covidmy.onrender.com/"
 
 class StateDataHandler:
     def __init__(self):
